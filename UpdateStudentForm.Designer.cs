@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.submitBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.addressLabel = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
@@ -46,20 +46,20 @@
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // submitBtn
+            // updateBtn
             // 
-            this.submitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(86)))), ((int)(((byte)(146)))));
-            this.submitBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.submitBtn.FlatAppearance.BorderSize = 0;
-            this.submitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitBtn.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.submitBtn.ForeColor = System.Drawing.Color.White;
-            this.submitBtn.Location = new System.Drawing.Point(209, 387);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(280, 45);
-            this.submitBtn.TabIndex = 31;
-            this.submitBtn.Text = "Submit";
-            this.submitBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(86)))), ((int)(((byte)(146)))));
+            this.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.updateBtn.FlatAppearance.BorderSize = 0;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.updateBtn.ForeColor = System.Drawing.Color.White;
+            this.updateBtn.Location = new System.Drawing.Point(209, 387);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(280, 45);
+            this.updateBtn.TabIndex = 31;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
             // 
             // addressTextBox
             // 
@@ -227,7 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(716, 470);
-            this.Controls.Add(this.submitBtn);
+            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.addressLabel);
             this.Controls.Add(this.phoneTextBox);
@@ -256,7 +256,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button submitBtn;
+        private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.TextBox phoneTextBox;
