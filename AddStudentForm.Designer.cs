@@ -119,7 +119,7 @@
             // 
             // birthDateBox
             // 
-            this.birthDateBox.CustomFormat = "MM/dd/ yyyy";
+            this.birthDateBox.CustomFormat = "dd/MM/ yyyy";
             this.birthDateBox.Font = new System.Drawing.Font("Tahoma", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthDateBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.birthDateBox.Location = new System.Drawing.Point(47, 318);
