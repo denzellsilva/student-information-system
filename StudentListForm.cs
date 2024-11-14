@@ -20,7 +20,7 @@ namespace student_information_system
             InitializeComponent();
         }
 
-        private void LoadData()
+        private void StudentsTableLoadData()
         {
             string sql = "SELECT * FROM Students";
             SqlConnection conn = new SqlConnection(_connString);
@@ -49,7 +49,7 @@ namespace student_information_system
         private void StudentListForm_Load(object sender, EventArgs e)
         {
             SearchComboBox.SelectedIndex = 0;
-            LoadData();
+            StudentsTableLoadData();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace student_information_system
 
         private void refreshTbBtn_Click(object sender, EventArgs e)
         {
-            LoadData();
+            StudentsTableLoadData();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace student_information_system
                 {
                     conn.Open();
                     Int32 rowsAffected = cmd.ExecuteNonQuery();
-                    LoadData();
+                    StudentsTableLoadData();
                     conn.Close();
                 }
                 catch (Exception ex)
