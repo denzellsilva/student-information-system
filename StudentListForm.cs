@@ -22,13 +22,13 @@ namespace student_information_system
 
         private void StudentsTableLoadData()
         {
-            string sql = "SELECT * FROM Students";
+            string query = "SELECT * FROM Students";
             SqlConnection conn = new SqlConnection(_connString);
             conn.Open();
 
             try
             {
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
                 // SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.SelectCommand = cmd;
@@ -99,6 +99,21 @@ namespace student_information_system
                     MessageBox.Show("Something went wrong. Try again later");
                 }
             }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (studentsDataGridView.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("No row selected.");
+                return;
+            }
+
+            DataGridViewRow selectedRow = studentsDataGridView.SelectedRows[0];
+            var id = selectedRow.Cells["idDataGridViewTextBoxColumn"].Value.ToString();
+
+            Form updateStudentForm = new UpdateStudentForm(id);
+            updateStudentForm.ShowDialog();
         }
     }
 }
