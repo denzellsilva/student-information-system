@@ -1,5 +1,5 @@
 # Student Information System
-The app is created for our final school requirement only. It's only developed to demonstrate CRUD operations. It's not secure, and not advisable to use it in real world.
+The app is created for our final school requirement only. It's made with .NET windows forms. It's only developed to demonstrate CRUD operations. It's not secure, and not advisable to use it in real world. 
 
 Application Features:
 - Login system mock-up (not secure since the password is shown in codebase).
