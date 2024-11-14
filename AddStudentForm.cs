@@ -68,7 +68,6 @@ namespace student_information_system
                 catch (Exception ex)
                 {
                     MessageBox.Show("Something went wrong. Try again later.");
-                    //this.Hide();
                 }
             }
         }
