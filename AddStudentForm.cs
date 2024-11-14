@@ -23,7 +23,7 @@ namespace student_information_system
             string firstName = firstNameTextBox.Text;
             string middleName = middleNameTextBox.Text;
             string lastName = lastNameTextBox.Text;
-            string birthdate = birthDateBox.Text;
+            DateTime birthdate = birthDateBox.Value;
             string gender = "";
             string phone = phoneTextBox.Text;
             string address = addressTextBox.Text;
@@ -37,7 +37,7 @@ namespace student_information_system
                 gender = femaleRadioBtn.Text;
             }
 
-            if (firstName == "" || middleName == "" || lastName == "" || birthdate == "" || gender == "" || phone == "" || address == "")
+            if (firstName == "" || middleName == "" || lastName == "" || gender == "" || phone == "" || address == "")
             {
                 MessageBox.Show("Fill in all fields");
                 return;
@@ -46,12 +46,12 @@ namespace student_information_system
             string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\MARL DENZELL SILVA\\source\\repos\\student-information-system\\students-information-system.mdf\";Integrated Security=True;Connect Timeout=30";
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                string sql = "INSERT INTO Students (FirstName, MiddleName, LastName, Birthdate, Gender, Phone, Address) VALUES (@firstName, @middleName, @lastName, @birthdate, @gender, @phone, @address)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                string query = "INSERT INTO Students (FirstName, MiddleName, LastName, Birthdate, Gender, Phone, Address) VALUES (@firstName, @middleName, @lastName, @birthdate, @gender, @phone, @address)";
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add("@firstName", SqlDbType.VarChar, 255).Value = firstName;
                 cmd.Parameters.Add("@middleName", SqlDbType.VarChar, 255).Value = middleName;
                 cmd.Parameters.Add("@lastName", SqlDbType.VarChar, 255).Value = lastName;
-                cmd.Parameters.Add("@birthdate", SqlDbType.VarChar, 255).Value = birthdate;
+                cmd.Parameters.Add("@birthdate", SqlDbType.Date).Value = birthdate;
                 cmd.Parameters.Add("@gender", SqlDbType.VarChar, 255).Value = gender;
                 cmd.Parameters.Add("@phone", SqlDbType.VarChar, 255).Value = phone;
                 cmd.Parameters.Add("@address", SqlDbType.VarChar, 255).Value = address;
