@@ -37,7 +37,7 @@ namespace student_information_system
                 gender = femaleRadioBtn.Text;
             }
 
-            if (firstName == "" || middleName == "" || lastName == "" || gender == "" || phone == "" || address == "")
+            if (firstName == "" || lastName == "" || gender == "" || phone == "" || address == "")
             {
                 MessageBox.Show("Fill in all fields");
                 return;
