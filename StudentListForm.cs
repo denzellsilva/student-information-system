@@ -134,7 +134,15 @@ namespace student_information_system
                 adapter.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                studentsDataGridView.DataSource = dt;
+
+                if (dt.Rows.Count > 0)
+                { 
+                    studentsDataGridView.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("No results found");
+                }
             }
             catch (Exception)
             {
