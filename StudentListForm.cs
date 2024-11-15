@@ -15,6 +15,7 @@ namespace student_information_system
     public partial class StudentListForm : Form
     {
         private string _connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\MARL DENZELL SILVA\\source\\repos\\student-information-system\\students-information-system.mdf\";Integrated Security=True;Connect Timeout=30";
+
         public StudentListForm()
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace student_information_system
 
         private void StudentListForm_Load(object sender, EventArgs e)
         {
-            SearchComboBox.SelectedIndex = 0;
+            searchComboBox.SelectedIndex = 0;
             StudentsTableLoadData();
         }
 
@@ -114,6 +115,35 @@ namespace student_information_system
 
             Form updateStudentForm = new UpdateStudentForm(id);
             updateStudentForm.ShowDialog();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            string value = searchComboBox.SelectedItem.ToString();
+            string catagory = value.Replace(" ", "");
+            string searchValue = searchTextBox.Text;
+
+            string query = "SELECT * FROM Students WHERE " + catagory + " LIKE '" + searchValue + "%'";
+            SqlConnection conn = new SqlConnection(_connString);
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                studentsDataGridView.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error loading data");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
