@@ -36,7 +36,7 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.SearchComboBox = new System.Windows.Forms.ComboBox();
+            this.searchComboBox = new System.Windows.Forms.ComboBox();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._students_information_systemDataSet = new student_information_system._students_information_systemDataSet();
             this.studentsTableAdapter = new student_information_system._students_information_systemDataSetTableAdapters.StudentsTableAdapter();
@@ -65,7 +65,7 @@
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Controls.Add(this.searchBtn);
             this.panel1.Controls.Add(this.searchTextBox);
-            this.panel1.Controls.Add(this.SearchComboBox);
+            this.panel1.Controls.Add(this.searchComboBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -148,6 +148,7 @@
             this.searchBtn.TabIndex = 2;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // searchTextBox
             // 
@@ -158,21 +159,21 @@
             this.searchTextBox.Size = new System.Drawing.Size(252, 34);
             this.searchTextBox.TabIndex = 1;
             // 
-            // SearchComboBox
+            // searchComboBox
             // 
-            this.SearchComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SearchComboBox.Font = new System.Drawing.Font("Tahoma", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchComboBox.FormattingEnabled = true;
-            this.SearchComboBox.Items.AddRange(new object[] {
+            this.searchComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.searchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchComboBox.Font = new System.Drawing.Font("Tahoma", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchComboBox.FormattingEnabled = true;
+            this.searchComboBox.Items.AddRange(new object[] {
             "Id",
             "First Name",
             "Middle Name",
             "Last Name"});
-            this.SearchComboBox.Location = new System.Drawing.Point(24, 39);
-            this.SearchComboBox.Name = "SearchComboBox";
-            this.SearchComboBox.Size = new System.Drawing.Size(172, 35);
-            this.SearchComboBox.TabIndex = 0;
+            this.searchComboBox.Location = new System.Drawing.Point(24, 39);
+            this.searchComboBox.Name = "searchComboBox";
+            this.searchComboBox.Size = new System.Drawing.Size(172, 35);
+            this.searchComboBox.TabIndex = 0;
             // 
             // studentsBindingSource
             // 
@@ -302,7 +303,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox SearchComboBox;
+        private System.Windows.Forms.ComboBox searchComboBox;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button addBtn;
